@@ -3,17 +3,23 @@ import PropTypes from 'prop-types';
 
 // Import Components
 import PostListItem from './PostListItem/PostListItem';
+import PostReducer from '../PostReducer';
 
 function PostList(props) {
   return (
     <div className="listView">
       {
         props.posts.map(post => (
-          <PostListItem
-            post={post}
-            key={post.cuid}
-            onDelete={() => props.handleDeletePost(post.cuid)}
-          />
+          <div>
+            <PostListItem
+              post={post}
+              key={post.cuid}
+              onDelete={() => props.handleDeletePost(post.cuid)}
+              votes = {post.votes}
+              onThumbUp={() => props.handleThumbUp(post.cuid, post)}
+              onThumbDown={() => props.handleThumbDown(post.cuid, post)}
+            />
+          </div>
         ))
       }
     </div>
