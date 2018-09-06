@@ -34,6 +34,7 @@ const PostReducer = (state = initialState, action) => {
       return {
         data: state.data.map(post => { return post.cuid === action.cuid ? Object.assign({}, post, action.post) : post } ),
       };
+      
     default:
       return state;
   }
