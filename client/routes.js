@@ -2,6 +2,7 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './modules/App/App';
+import Navigation from './modules/App/components/Navigation/Navigation';
 
 // require.ensure polyfill for node
 if (typeof require.ensure !== 'function') {
@@ -21,12 +22,20 @@ if (process.env.NODE_ENV !== 'production') {
   require('./modules/Post/pages/PostDetailPage/PostDetailPage');
   require('./modules/Home/Home');
   require('./modules/About/About');
+  require('./modules/App/components/Navigation/Navigation');
 }
 
 // react-router setup with code-splitting
 // More info: http://blog.mxstbr.com/2016/01/react-apps-with-pages/
 export default (
-  <Route path="/" component={App}>
+  <Route path="/" component={App} >
+  <IndexRoute
+      getComponent={(nextState, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./modules/App/components/Navigation/Navigation').default);
+        });
+      }}
+    />
     <IndexRoute
       getComponent={(nextState, cb) => {
         require.ensure([], require => {

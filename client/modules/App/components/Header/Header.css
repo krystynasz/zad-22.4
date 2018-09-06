@@ -1,5 +1,5 @@
 .header {
-  background: #eee url('../../header-bk.png') center;
+  background:#34495e url('../../header-bk.png') center;
   background-size: cover;
   border-bottom: 1px solid #ccc;
 }
@@ -34,14 +34,22 @@
 }
 
 .language-switcher {
-  background: rgba(0, 0, 0, 0.1);
+  height: 60px;
+  position: absolute;
+  line-height: 60px;
+  width: 100vw;
+ // background-color: blue;
 }
 
 .language-switcher ul {
   list-style: none;
-  width: 980px;
-  margin: auto;
+  width: 300px;
+ 
   text-align: right;
+ position: relative;
+margin:  0 50px 0 300px;
+//bottom: 10px;
+float: right;
 }
 
 .language-switcher li {
