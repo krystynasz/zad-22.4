@@ -1,12 +1,18 @@
 .navigation {
     height: 60px;
-    position: absolute;
-    text-align: right;
+    position: relative;
+    text-align: left;
    // background-color: black;
+   top: -180px;
+   width: 300px;
 }
 .navigation li {
 display: inline-block;
 padding: 0 20px;
 line-height: 60px;
-color: white;
+
+}
+
+.navigation li a {
+    color: white;
 }

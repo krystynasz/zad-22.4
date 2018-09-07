@@ -27,7 +27,7 @@ export class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({isMounted: true}); // eslint-disable-line
+    this.setState({ isMounted: true }); // eslint-disable-line
   }
 
   toggleAddPostSection = () => {
@@ -54,18 +54,18 @@ export class App extends Component {
               },
             ]}
           />
-           <Navigation/>
           <Header
             switchLanguage={lang => this.props.dispatch(switchLanguage(lang))}
             intl={this.props.intl}
             toggleAddPost={this.toggleAddPostSection}
           />
-         
+<Navigation />
           <div className={styles.container}>
             {this.props.children}
           </div>
           <Footer />
         </div>
+
       </div>
     );
   }
